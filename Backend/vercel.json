@@ -13,7 +13,15 @@
   "routes": [
     {
       "src": "/(.*)", 
-      "dest": "/routes/authRoutes.js" 
+      "dest": "/api/healthcheck" 
+    },
+    {
+      "src": "/api/auth/(.*)",
+      "dest": "/api/auth/$1" 
+    },
+    {
+      "src": "/api/auth/(.*)",
+      "dest": "/api/auth/$2" 
     }
   ]
 }
