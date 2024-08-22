@@ -8,10 +8,13 @@ const userRoutes = require('./routes/userRoutes');
 const openApiDocs = require('./openapi');
 const strongPassword = require('./passwordUtils');
 const acolhidoRoutes = require('./routes/acolhidoRoutes');
-const healthcheckRoutes = require('./api/healthcheck');
 
 const app = Fastify({ logger: true });
 const PORT = process.env.PORT || 3333;
+
+app.get('/', async (request, reply) => {
+    reply.send({ message: 'Servidor online!' });
+  });
 
 app.register(fastifycors);
 
@@ -35,7 +38,6 @@ app.register(swaggerui, openApiDocs);
 app.register(acolhidoRoutes, { prefix: '/api' });
 app.register(userRoutes, { prefix: '/api' });
 app.register(authRoutes, { prefix: '/api/auth' });
-app.register(healthcheckRoutes, { prefix: '/api/healthcheck' });
 
 // Iniciar o servidor 
 app.listen({ port: PORT, host: '0.0.0.0' }, (err, address) => {
