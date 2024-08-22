@@ -1,15 +1,31 @@
 {
-    "version": 2,
-    "builds": [
-      {
-        "src": "app.js",
-        "use": "@vercel/node"
+  "version": 2,
+  "builds": [
+    {
+      "src": "app.js", // Correto! Mantém como está
+      "use": "@vercel/node", // Correto! Mantém como está
+      "config": {
+        "maxLambdaSize": "8mb", // Define o tamanho máximo da função Lambda 
+        "runtime": "nodejs18.x" // Define a versão do Node.js a ser utilizada
       }
-    ],
-    "routes": [
-      {
-        "src": "/(.*)",
-        "dest": "/api/healthcheck"
-      }
-    ]
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)", // Correto! Mantém como está
+      "dest": "/api/healthcheck" // Correto! Mantém como está
+    },
+    {
+      "src": "/api/auth/(.*)",
+      "dest": "/api/auth/$1" // Redireciona para a rota '/api/auth'
+    },
+    {
+      "src": "/api/Usuario/(.*)",
+      "dest": "/api/Usuario/$1" // Redireciona para a rota '/api/Usuario' 
+    },
+    {
+      "src": "/api/Usuarios/(.*)",
+      "dest": "/api/Usuarios/$1" // Redireciona para a rota '/api/Usuarios' 
+    }
+  ]
 }
