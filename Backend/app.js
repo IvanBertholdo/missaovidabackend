@@ -33,7 +33,7 @@ app.register(swaggerui, openApiDocs);
 // Registre suas rotas aqui:
 app.register(acolhidoRoutes, { prefix: '/api' });
 app.register(userRoutes, { prefix: '/api' });
-app.register(authRoutes, { prefix: '/auth' });
+app.register(authRoutes, { prefix: '/api/auth' });
 
 // Iniciar o servidor 
 app.listen({ port: PORT, host: '0.0.0.0' }, (err, address) => {
