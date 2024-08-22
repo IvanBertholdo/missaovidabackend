@@ -1,7 +1,7 @@
 const { Sequelize } = require('sequelize');
 //const config = require('../config/database');
 const { DATABASE_URL } = process.env;
-const sequelize = new Sequelize(config);
+const sequelize = new Sequelize(DATABASE_URL);
 
 const db = {};
 
