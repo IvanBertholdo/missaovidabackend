@@ -3,21 +3,7 @@
   "builds": [
     {
       "src": "app.js", 
-      "use": "@vercel/node",
-      "config": {
-        "maxLambdaSize": "8mb", 
-        "runtime": "nodejs18.x" 
-      }
-    }
-  ],
-  "routes": [
-    {
-      "src": "/api/auth/(.*)",
-      "dest": "/api/auth/$1" 
-    },
-    {
-      "src": "/api/auth/(.*)",
-      "dest": "/api/auth/$2" 
+      "use": "@vercel/node"
     }
   ]
 }
