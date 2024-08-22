@@ -2,7 +2,7 @@
   "version": 2,
   "builds": [
     {
-      "src": "/app.js", 
+      "src": "app.js", 
       "use": "@vercel/node",
       "config": {
         "maxLambdaSize": "8mb", 
@@ -13,11 +13,7 @@
   "routes": [
     {
       "src": "/(.*)", 
-      "dest": "/api/healthcheck"
-    },
-    {
-      "src": "/(.*)", 
-      "dest": "/app.js"
+      "dest": "/api/healthcheck" 
     },
     {
       "src": "/api/auth/(.*)",
