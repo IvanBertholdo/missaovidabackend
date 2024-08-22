@@ -3,5 +3,6 @@ module.exports = {
     password: "root",
     database: "db_missaovida",
     host: "127.0.0.1",
-    dialect: "mysql"
+    dialect: "mysql",
+    dialectModule: "mysql2"
 };
